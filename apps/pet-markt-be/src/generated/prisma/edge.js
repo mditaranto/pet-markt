@@ -158,7 +158,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\Usuario\\Desktop\\PDF\\Nueva carpeta\\pet-markt\\apps\\pet-markt-be\\src\\generated\\prisma",
+      "value": "C:\\Users\\Usuario\\Desktop\\PDF\\Nuevacarpeta\\pet-markt\\apps\\pet-markt-be\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -172,7 +172,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\Usuario\\Desktop\\PDF\\Nueva carpeta\\pet-markt\\apps\\pet-markt-be\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\Usuario\\Desktop\\PDF\\Nuevacarpeta\\pet-markt\\apps\\pet-markt-be\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
