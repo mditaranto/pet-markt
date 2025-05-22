@@ -23,6 +23,10 @@ withComputed((store) => ({
         return store.items().reduce((acc, item) => 
              acc + item.quantity, 0)
     }),
+    totalAmount: computed(() => {
+        return store.items().reduce((acc, item) => 
+             acc + item.quantity * item.price, 0)
+    }),
 })),
 withMethods((store) => ({
     addToCart(product: Product, quantity = 1) {
@@ -50,6 +54,18 @@ withMethods((store) => ({
                 }]
             })
         }
-    }
+    },
+    updateQuantity(productId: string, quantity: number) {
+        const updatedItems = store
+        .items()
+        .map((item) => (item.id === productId ? { ...item, quantity } : item));
+    patchState(store, {items: updatedItems});
+    },
+    removeFromCart(productId: string) {
+      const updatedItems = store
+        .items()
+        .filter((item) => item.id !== productId);
+      patchState(store, { items: updatedItems });
+    },
 }))
  ) 
