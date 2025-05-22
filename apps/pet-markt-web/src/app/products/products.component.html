@@ -38,7 +38,7 @@
   >
     <!-- loop over products -->
     @for (product of productStore.products(); track product.id) {
-    <app-product-card [product] = "product" />
+    <app-product-card (addToCart)="addToCart($event)" [product] = "product" />
     }
   </div>
   }

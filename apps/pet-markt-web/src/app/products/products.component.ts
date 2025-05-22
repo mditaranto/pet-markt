@@ -4,6 +4,8 @@ import { ProductCardComponent } from '../components/product-card/product-card.co
 import { FormsModule } from '@angular/forms'
 import {  debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 import untilDestroyed from '../utils/untilDestroyed';
+import { CartStore } from '../stores/cart.store';
+import { Product } from '@prisma/client';
 
 @Component({
   selector: 'app-products',
@@ -13,7 +15,8 @@ import untilDestroyed from '../utils/untilDestroyed';
 })
 export class ProductsComponent {
   searchTerm = '';
-  productStore = inject(ProductStore)
+  productStore = inject(ProductStore);
+  cartStore = inject(CartStore);
   searchSubject = new Subject<string>();
   destroyed = untilDestroyed();
 
@@ -33,5 +36,9 @@ export class ProductsComponent {
 
   onSearch(term: string) {
     this.searchSubject.next(term)
+  }
+
+  addToCart(product: Product) {
+    this.cartStore.addToCart(product)
   }
 }
