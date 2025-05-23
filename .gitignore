@@ -44,3 +44,5 @@ Thumbs.db
 test-output
 
 .angular
+
+apps/pet-markt-web/src/app/environments/environment.prod.ts

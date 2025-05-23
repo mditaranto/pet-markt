@@ -4,6 +4,11 @@ export const appRoutes: Route[] = [
   {
     path: '',
     pathMatch: 'full',
+    redirectTo: 'home',
+  },
+  {
+    path: 'home',
+    pathMatch: 'full',
     loadComponent: async () => {
       const mod = await import('./home/home.component');
       return mod.HomeComponent;
@@ -29,5 +34,10 @@ export const appRoutes: Route[] = [
       const mod = await import('./checkout/checkout.component');
       return mod.CheckoutComponent;
     },
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: 'home',
   },
 ];
