@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const envPath = path.resolve(__dirname, '../apps/pet-markt-web/src/app/environments/environment.prod.ts');
-const templatePath = path.resolve(__dirname, '../apps/pet-markt-web/src/app/environments/environment.prod.template.ts');
+const envPath = path.resolve(__dirname, '../environments/environment.prod.ts');
+const templatePath = path.resolve(__dirname, '../environments/environment.prod.template.ts');
 
 const apiUrl = process.env.API_URL;
 
